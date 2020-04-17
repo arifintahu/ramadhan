@@ -7,7 +7,7 @@ const items = [
 	{
 		type 	: 'video',
 		title 	: 'Listen kajian',
-		url		: 'https://www.youtube.com/watch?v=moKHzV9ca4o'
+		url		: 'https://www.youtube.com/embed/moKHzV9ca4o'
 	},
 	{
 		type 	: 'article',

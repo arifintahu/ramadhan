@@ -2,21 +2,21 @@
   <div id="app">
 
     <section class="header">
-      <div class="title">{{num_items}} ideas to do on Ramadhan</div>
-      <div class="subtitle">{{item.title}}</div>
-      <b-button type="is-primary" @click.prevent="clickNext">
-        Next Activity
-      </b-button>
+      <ContentHeader :num_items="num_items"></ContentHeader>
     </section>
 
+    <b-button class="button" type="is-link" @click.prevent="clickNext">
+      Next Activity
+    </b-button>
     <section class="content">
-      <ContentBox :content="item"></ContentBox>
+      <div v-if="done" class="subtitle">{{item.title}}</div>
+      <ContentBox :content="item" v-if="done"></ContentBox>
     </section>
+
+    <Loader v-if="!done"></Loader>
 
     <section class="footer">
-      <a href="https://github.com/arifintahu/ramadhan">
-        <img src="/img/icons/github-logo-icon.png" alt="github logo" width="30"></img>
-      </a>
+      <Footer></Footer>
     </section>
 
   </div>
@@ -24,18 +24,25 @@
 
 <script>
   import ContentBox from '@/components/ContentBox.vue'
+  import ContentHeader from '@/components/ContentHeader.vue'
+  import Footer from '@/components/Footer.vue'
+  import Loader from '@/components/Loader.vue'
   import items from './items.js'
 
   export default {
     name: 'App',
     components: {
-      ContentBox
+      ContentBox,
+      ContentHeader,
+      Footer,
+      Loader
     },
     data: () => ({
       item: '',
       list: [],
       num_items : 0,
-      next : 0
+      next : 0,
+      done : false
     }),
     methods: {
       clickNext(){
@@ -47,7 +54,14 @@
         this.showContent();
       },
       showContent(){
+        this.done = false;
+        this.loading();
         this.item = this.list[this.next];
+      },
+      loading() {
+        setTimeout(() => {
+          this.done = true;
+        }, 1000)
       },
       shuffle(a) {
           for (let i = a.length - 1; i > 0; i--) {
@@ -66,9 +80,6 @@
 </script>
 
 <style>
-  body {
-    background: #fafafa;
-  }
   #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -77,5 +88,19 @@
     color: #2c3e50;
     padding-top: 60px;
     height: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .footer {
+    padding-bottom: 30px;
+  }
+  .subtitle {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 0px;
+  }
+  .button {
+    margin-top: 20px;
+    margin-bottom: 10px;
   }
 </style>

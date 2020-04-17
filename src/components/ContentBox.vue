@@ -28,7 +28,6 @@
 <style scoped>
   .content-body {
     width: 400px;
-    height: auto;
-    padding: 20px;
+    min-height: 300px;
   }
 </style>

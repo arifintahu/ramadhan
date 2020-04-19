@@ -1,11 +1,11 @@
 <template>
-	<v-container>
+	<div class="container">
 		<div class="loadingio-spinner-cube-2n5rla4eg8q">
 			<div class="ldio-lokbol8m3q">
 				<div></div><div></div><div></div><div></div>
 			</div>
 		</div>
-	</v-container>
+	</div>
 </template>
 
 <script>

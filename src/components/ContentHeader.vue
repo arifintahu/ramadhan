@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="title">{{num_items}} Ideas to Do on Ramadhan</div>
+    <div class="title">{{num_items}} Ideas To Do During Ramadhan</div>
   </div>
 </template>
 

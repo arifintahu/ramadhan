@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <a href="https://github.com/arifintahu/ramadhan">
+    <a href="https://github.com/arifintahu/ramadhan" target="_blank">
 		<img src="img/icons/github-logo-icon.png" alt="github logo" width="30"></img>
 	</a>
   </div>

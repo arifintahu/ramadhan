@@ -11,9 +11,13 @@
     <section class="content">
       <div v-if="done" class="subtitle">{{item.title}}</div>
       <ContentBox :content="item" v-if="done"></ContentBox>
+      <p v-if="done" class="quote">{{item.quote}}</p>
+      <p v-if="done" class="quote_name">{{item.quote_name}}</p>
     </section>
 
-    <Loader v-if="!done"></Loader>
+    <div class="my-loader" v-if="!done">
+      <Loader></Loader>
+    </div>
 
     <section class="footer">
       <Footer></Footer>
@@ -88,19 +92,42 @@
     color: #2c3e50;
     padding-top: 60px;
     height: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
   .footer {
-    padding-bottom: 30px;
+    padding-bottom: 60px;
   }
   .subtitle {
+    font-weight: 700px;
+    font-family: Calibri, Helvetica, sans-serif;
     padding-top: 10px;
     padding-bottom: 10px;
     margin-bottom: 0px;
+    max-width: 400px;
+    margin: auto;
+    font-size: 18px;
+  }
+  .quote {
+    padding-top: 14px;
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+    font-size: 14px;
+    font-family: Calibri, Helvetica, sans-serif;
+    margin-bottom: 0px !important;
+  }
+  .quote_name {
+    font-size: 12px;
+    font-weight: 700;
+    padding-top: 10px;
   }
   .button {
     margin-top: 20px;
     margin-bottom: 10px;
+  }
+  .my-loader {
+    padding-top: 50px;
+    padding-bottom: 100px;
   }
 </style>

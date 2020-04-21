@@ -99,8 +99,8 @@
     padding-bottom: 60px;
   }
   .subtitle {
-    font-weight: 700px;
-    font-family: Calibri, Helvetica, sans-serif;
+    font-weight: 800;
+    font-family: Arial, Helvetica, sans-serif;
     padding-top: 10px;
     padding-bottom: 10px;
     margin-bottom: 0px;
